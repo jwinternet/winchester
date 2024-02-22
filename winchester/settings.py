@@ -31,6 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # My apps.
+    'iron_fleet',
+    'accounts',
+
+    # Default Django apps.
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +59,7 @@ ROOT_URLCONF = 'winchester.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / 'iron_fleet/templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -122,3 +127,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# My settings.
+LOGIN_REDIRECT_URL = "iron_fleet:index"
+LOGOUT_REDIRECT_URL = "iron_fleet:index"
+LOGIN_URL = "accounts:login"

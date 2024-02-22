@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Topics</title>
+</head>
+<body>
+    {% extends "iron_fleet/base.html" %}
+    {% block content %}
+        <p>Topics</p>
+        <ul>
+            {% for topic in topics %}
+                <li>
+                    <a href="{% url 'iron_fleet:topic' topic.id %}">
+                        {{ topic.text }}</a></li>
+                </li>
+            {% empty %}
+                <li>No topics have been added yet.</li>
+            {% endfor %}
+        </ul>
+
+        <a href="{% url 'iron_fleet:new_topic' %}">Add A New Topic</a>
+
+    {% endblock content %}
+</body>
+</html>

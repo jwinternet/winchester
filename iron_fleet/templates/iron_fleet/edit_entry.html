@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Entry</title>
+</head>
+<body>
+    {% extends "iron_fleet/base.html" %}
+
+    {% block content %}
+
+        <p><a href="{% url 'iron_fleet:topic' topic.id %}">{{ topic }}</a></p>
+
+        <p>Edit Entry:</p>
+
+        <form action="{% url 'iron_fleet:edit_entry' entry.id %}" method='post'>
+            {% csrf_token %}
+            {{ form.as_div }}
+            <button name="submit">Save Changes</button>
+        </form>
+
+    {% endblock content %}
+</body>
+</html>

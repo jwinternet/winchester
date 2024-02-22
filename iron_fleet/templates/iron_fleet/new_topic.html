@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Topic</title>
+</head>
+<body>
+    {% extends "iron_fleet/base.html" %}
+
+    {% block content %}
+        <p>Add a new topic:</p>
+
+        <form action="{% url 'iron_fleet:new_topic' %}" method='post'>
+            {% csrf_token %}
+            {{ form.as_div }}
+            <button name="submit">Add Topic</button>
+        </form>
+
+    {% endblock content %}
+</body>
+</html>
