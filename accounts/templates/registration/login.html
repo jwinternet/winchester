@@ -6,6 +6,11 @@
 </head>
 <body>
     {% extends "iron_fleet/base.html" %}
+    {% load django_bootstrap5 %}
+
+    {% block page_header %}
+        <h2>Log in to your account.</h2>
+    {% endblock page_header %}
 
     {% block content %}
 
@@ -15,9 +20,8 @@
 
         <form action="{% url 'accounts:login' %}" method='post'>
             {% csrf_token %}
-            {{ form.as_div }}
-
-            <button name="submit">Log In</button>
+            {% bootstrap_form form %}
+            {% bootstrap_button button_type="submit" content="Log in" %}
         </form>
     {% endblock content %}
 </body>
