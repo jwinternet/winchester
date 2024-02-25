@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Iron Fleet</title>
+    <title>Hyper Ultimate Super Website</title>
 
     {% load django_bootstrap5 %}
     {% bootstrap_css %}
@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'iron_fleet:index' %}">Iron Fleet</a>
+            <a class="navbar-brand" href="{% url 'iron_fleet:index' %}">Hyper Ultimate Super Website</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -26,6 +26,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
                     <a class="nav-link" href="{% url 'iron_fleet:topics' %}">Topics</a></li>
+                    <a class="nav-link" href="{% url 'iron_fleet:topics' %}">Placeholder</a></li>
                 </ul> <!-- End of links on left side of navbar -->
 
                 <!-- Account-related links -->
@@ -33,7 +34,7 @@
 
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <span class="navbar-text me-2">Hello, {{ user.username }}.</span></li>
+                            <span class="navbar-text me-2">Greetings, {{ user.username }}!!!.</span></li>
                     {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'accounts:register' %}">Register</a></li>
